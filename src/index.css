@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #0B0F1A;
+  --color-secondary-dark: #111827;
+  --color-tech-purple: #7B5CFF;
+  --color-electric-cyan: #00E0FF;
+  --color-soft-gold: #F59E0B;
+  --color-headings: #F3F4F6;
+  --color-body: #9CA3AF;
+  --color-micro: #6B7280;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Premium Animations */
+  --animate-spin-slow: spin 15s linear infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-pulse-slow: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-light-sweep: light-sweep 3s ease-in-out infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-primary-dark text-body antialiased overflow-x-hidden selection:bg-tech-purple/30 selection:text-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-headings font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-lg border border-white/[0.05] rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-tech-purple to-electric-cyan;
+    background-size: 200% auto;
+    transition: background-position 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-gradient:hover {
+    background-position: right center;
+  }
+
+  .heading-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .heading-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent);
+    transition: left 0.6s ease;
+  }
+
+  .heading-shimmer:hover::after {
+    left: 150%;
+  }
+
+  .btn-gradient {
+    @apply relative bg-gradient-to-r from-tech-purple/80 to-electric-cyan/80 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 overflow-hidden;
+  }
+
+  .btn-gradient:hover {
+    @apply scale-[1.03] shadow-[0_0_20px_rgba(123,_92,_255,_0.4)];
+  }
+
+  .btn-gradient::before {
+    content: '';
+    @apply absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    transition: left 0.5s ease-in-out;
+  }
+
+  .btn-gradient:hover::before {
+    @apply left-full;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+
+    50% {
+      transform: translateY(-20px) translateX(10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes light-sweep {
+    0% {
+      transform: translateX(-100%) rotate(-45deg);
+    }
+
+    100% {
+      transform: translateX(200%) rotate(-45deg);
+    }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
