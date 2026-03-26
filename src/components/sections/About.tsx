@@ -1,9 +1,11 @@
 import React from 'react';
+const IMEN_UNIQUE_MARKER = "IMEN_BUREAU_FIX_VERIFIED";
 import { motion } from 'framer-motion';
-import { staggerContainer, fadeInUp, textVariant } from '../../utils/animations';
+import { staggerContainer, fadeInUp } from '../../utils/animations';
 import { BrainCircuit, Server, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
+    console.log(IMEN_UNIQUE_MARKER);
     return (
         <section id="about" className="relative w-full py-32 px-6 overflow-hidden bg-primary-dark">
             <motion.div

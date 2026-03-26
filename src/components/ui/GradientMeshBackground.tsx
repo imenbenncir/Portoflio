@@ -30,25 +30,24 @@ const GradientMeshBackground: React.FC = () => {
     return (
         <div className="fixed inset-0 z-0 overflow-hidden bg-primary-dark pointer-events-none">
             {/* Animated low opacity grid */}
-            <div
-                className="absolute inset-0 opacity-[0.03]"
-                style={{
+            {React.createElement(motion.div, {
+                className: "absolute inset-0 opacity-[0.03]",
+                style: {
                     backgroundImage: `
             linear-gradient(to right, #7B5CFF 1px, transparent 1px),
             linear-gradient(to bottom, #7B5CFF 1px, transparent 1px)
           `,
                     backgroundSize: '80px 80px',
-                }}
-                animate={{
+                },
+                animate: {
                     opacity: [0.02, 0.04, 0.02]
-                }}
-                transition={{
+                },
+                transition: {
                     duration: 10,
                     repeat: Infinity,
                     ease: "easeInOut"
-                }}
-                as={motion.div}
-            />
+                }
+            } as any)}
 
             {/* Radial Gradient Backgrounds */}
             <div className="absolute top-1/4 left-1/4 w-[50%] h-[50%] rounded-full bg-tech-purple/5 blur-[120px] mix-blend-screen" />

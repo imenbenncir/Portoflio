@@ -5,9 +5,9 @@ import AnimatedCard from '../ui/AnimatedCard';
 import { MonitorSmartphone, Shield, Fingerprint } from 'lucide-react';
 
 const services = [
-    { icon: MonitorSmartphone, title: 'AI-Powered Full Stack Apps', desc: 'End-to-end development of scalable, intelligent web applications that adapt to user behaviors globally.', color: 'neon-blue' as const },
-    { icon: Shield, title: 'Digital Trust Systems', desc: 'Secure, verifiable infrastructures prioritizing user privacy and establishing unwavering digital integrity.', color: 'electric-purple' as const },
-    { icon: Fingerprint, title: 'Psychological UI/UX', desc: 'Interfaces designed around deep cognitive analysis for maximum engagement, retention, and accessibility.', color: 'soft-pink' as const }
+    { icon: MonitorSmartphone, title: 'AI-Powered Full Stack Apps', desc: 'End-to-end development of scalable, intelligent web applications that adapt to user behaviors globally.', color: 'electric-cyan' as const },
+    { icon: Shield, title: 'Digital Trust Systems', desc: 'Secure, verifiable infrastructures prioritizing user privacy and establishing unwavering digital integrity.', color: 'tech-purple' as const },
+    { icon: Fingerprint, title: 'Psychological UI/UX', desc: 'Interfaces designed around deep cognitive analysis for maximum engagement, retention, and accessibility.', color: 'muted-violet' as const }
 ];
 
 const Services: React.FC = () => {
