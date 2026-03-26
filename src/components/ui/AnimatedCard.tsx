@@ -5,7 +5,7 @@ import { cn } from '../../utils/cn';
 interface AnimatedCardProps extends HTMLMotionProps<"div"> {
     children: React.ReactNode;
     className?: string;
-    glowColor?: "tech-purple" | "electric-cyan" | "soft-gold" | "muted-violet";
+    glowColor?: "tech-purple" | "electric-cyan" | "soft-gold" | "muted-violet" | "neon-blue" | "electric-purple" | "soft-pink";
 }
 
 const colorMap = {
@@ -13,6 +13,9 @@ const colorMap = {
     "electric-cyan": "from-[#00E0FF] to-[#7B5CFF]",
     "soft-gold": "from-[#F59E0B] to-[#FBBF24]",
     "muted-violet": "from-[#8B5CF6] to-[#7B5CFF]",
+    "neon-blue": "from-[#00f0ff] to-[#7B5CFF]",
+    "electric-purple": "from-[#bc13fe] to-[#7B5CFF]",
+    "soft-pink": "from-[#ff69b4] to-[#7B5CFF]",
 };
 
 const AnimatedCard: React.FC<AnimatedCardProps> = ({ children, className, glowColor = "tech-purple", ...props }) => {
